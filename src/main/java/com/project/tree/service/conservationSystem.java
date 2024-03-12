@@ -6,6 +6,8 @@ import com.project.tree.model.Habitat;
 import com.project.tree.model.Species;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.*;
 
 @Service
@@ -85,11 +87,19 @@ public class conservationSystem {
         //return conservationAreas.get(name);
     }
 
-    public void printConservationAreasInOrder() {
+    public List<String> printConservationAreasInOrder() {
+
+        List<String> conservationAreasList = new ArrayList<>();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        PrintStream originalStream = System.out;
+        System.setOut(printStream);
         conservationAreaTree.printInOrder();
-//        List<String> conservationAreasList = new ArrayList<>();
-//        conservationAreasList.addAll(conservationAreas.keySet());
-//        return conservationAreasList;
+        System.setOut(originalStream);
+        String[] lines = outputStream.toString().split("\\r?\\n");
+        conservationAreasList.addAll(Arrays.asList(lines));
+
+        return conservationAreasList;
     }
 
 /**    public void addSpecies(Species species) {
