@@ -102,10 +102,6 @@ public class conservationSystem {
         return conservationAreasList;
     }
 
-/**    public void addSpecies(Species species) {
-        speciesTree.insert(species);
-        //speciesSet.add(species);
-    }**/
 
     public Species searchSpecies(String name) {
         return speciesTree.search(name);
