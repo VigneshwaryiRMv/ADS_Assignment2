@@ -9,6 +9,13 @@ public class Species {
         this.population = population;
         // Initialize other attributes as needed
     }
+    public Species() {
+        // Default constructor
+    }
+    
+    public Species(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

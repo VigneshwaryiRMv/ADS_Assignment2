@@ -6,4 +6,8 @@ public class Habitat {
     public Habitat(String name) {
         this.name = name;
     }
+    
+    public String getName() {
+        return name;
+    }
 }
