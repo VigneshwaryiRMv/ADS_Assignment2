@@ -134,11 +134,14 @@ public class conservationSystem {
                 return traverseDecisionTree(node.noChild, species);
             }
         } else if (node.question.equals("Focus on conservation efforts for endangered species.")) {
-            return "Implement conservation measures for " + species.name;
-        } else if (node.question.equals("Monitor the species population.")) {
-            return "Continue monitoring " + species.name + " population";
+            if (species.population < 1000) {
+                return "Monitor the species population.";
+            } else {
+                return "Implement conservation measures for " + species.name;
+            }
         }
 
         return "No decision";
     }
+
 }
