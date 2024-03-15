@@ -14,8 +14,7 @@ import java.util.List;
 
 @RestController
 public class conservativeAreaController {
-    @Autowired
-    private conservationSystem conservationSystemService;
+    @Autowired conservationSystem conservationSystemService;
 
     @PostMapping("/area")
     public ResponseEntity<String> addConservationArea(@RequestBody ConservationAreaRequest conservationAreaRequest) {
