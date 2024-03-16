@@ -59,4 +59,9 @@ public class conservativeAreaController {
         }
         return conservationSystemService.makeConservationDecision(species);
     }
+
+    @GetMapping("/areas")
+    public ResponseEntity<List<String>> getAllConservationAreas() {
+        return ResponseEntity.ok(conservationSystemService.printConservationAreasInOrder());
+    }
 }
