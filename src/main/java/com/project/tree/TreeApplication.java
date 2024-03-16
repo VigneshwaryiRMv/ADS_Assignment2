@@ -25,7 +25,7 @@ public class TreeApplication {
 		conservationSystem.addConservationArea("Wildlife Sanctuary", "Desert", "Marshland");
 
 		// Adding species to habitats
-		conservationSystem.addSpecies(new Species("Tiger", 500), "Tropical Forest");
+		conservationSystem.addSpecies(new Species("Tiger", 1500), "Tropical Forest");
 		conservationSystem.addSpecies(new Species("Elephant", 1200), "Grassland");
 		conservationSystem.addSpecies(new Species("Panda", 800), "Marshland");
 

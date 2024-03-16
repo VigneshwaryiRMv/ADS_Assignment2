@@ -15,53 +15,6 @@ public class SpeciesAVLTree {
         root = null;
     }
 
-    public void insert(Species species,String habitatName) {
-        root = insertSpecies(root, species,habitatName );
-    }
-
-    private SpeciesAVLNode insertSpecies(SpeciesAVLNode node, Species species, String habitatName) {
-        if (node == null) {
-            return new SpeciesAVLNode(species, habitatName);
-        }
-
-        // Compare species names for insertion
-        int compareResult = species.name.compareTo(node.species.name);
-
-        if (compareResult < 0) {
-            node.left = insertSpecies(node.left, species, habitatName);
-        } else if (compareResult > 0) {
-            node.right = insertSpecies(node.right, species, habitatName);
-        } else {
-            // Handle duplicate entry (if needed)
-            return node;
-        }
-
-        // Update height of the current node
-        node.height = 1 + Math.max(height(node.left), height(node.right));
-
-        // Check balance factor and perform rotations if necessary
-        int balance = getBalance(node);
-
-        // Perform rotations based on balance factor and species comparison
-        if (balance > 1 && species.name.compareTo(node.left.species.name) < 0) {
-            return rotateRight(node); // Left Left Case
-        }
-        if (balance < -1 && species.name.compareTo(node.right.species.name) > 0) {
-            return rotateLeft(node); // Right Right Case
-        }
-        if (balance > 1 && species.name.compareTo(node.left.species.name) > 0) {
-            node.left = rotateLeft(node.left);
-            return rotateRight(node); // Left Right Case
-        }
-        if (balance < -1 && species.name.compareTo(node.right.species.name) < 0) {
-            node.right = rotateRight(node.right);
-            return rotateLeft(node); // Right Left Case
-        }
-
-        return node;
-    }
-
-
     private int height(SpeciesAVLNode node) {
         return (node != null) ? node.height : 0;
     }

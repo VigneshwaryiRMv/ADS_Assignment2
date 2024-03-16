@@ -87,21 +87,6 @@ public class conservationSystem {
         //return conservationAreas.get(name);
     }
 
-    public List<String> printConservationAreasInOrder() {
-
-        List<String> conservationAreasList = new ArrayList<>();
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream printStream = new PrintStream(outputStream);
-        PrintStream originalStream = System.out;
-        System.setOut(printStream);
-        conservationAreaTree.printInOrder();
-        System.setOut(originalStream);
-        String[] lines = outputStream.toString().split("\\r?\\n");
-        conservationAreasList.addAll(Arrays.asList(lines));
-
-        return conservationAreasList;
-    }
-
 
     public Species searchSpecies(String name) {
         return speciesTree.search(name);

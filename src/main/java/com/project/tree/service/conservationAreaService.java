@@ -134,24 +134,5 @@ public class conservationAreaService {
         }
     }
      **/
-    public List<conservationArea> getAllConservationAreas() {
-        List<conservationArea> allAreas = new ArrayList<>();
-        Stack<conservationAreaNode> stack = new Stack<>();
-        conservationAreaNode currentNode = root;
-
-        while (currentNode != null || !stack.isEmpty()) {
-            while (currentNode != null) {
-                stack.push(currentNode);
-                currentNode = currentNode.left;
-            }
-
-            currentNode = stack.pop();
-            allAreas.add(currentNode.area);
-
-            currentNode = currentNode.right;
-        }
-
-        return allAreas;
-    }
 
 }
