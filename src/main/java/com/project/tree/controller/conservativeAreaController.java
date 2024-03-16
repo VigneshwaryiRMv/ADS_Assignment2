@@ -41,11 +41,6 @@ public class conservativeAreaController {
        return ResponseEntity.ok(conservationSystemService.searchConservationArea(name));
     }
 
-    @GetMapping("/areas")
-    public ResponseEntity<List<String>> getAllConservationAreas() {
-        return ResponseEntity.ok(conservationSystemService.printConservationAreasInOrder());
-    }
-
     @GetMapping("/species/{name}")
     public Species getSpecies(@PathVariable String name) {
         return conservationSystemService.searchSpecies(name);
