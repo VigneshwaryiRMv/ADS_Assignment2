@@ -1,14 +1,9 @@
 package com.project.tree;
-
-import com.project.tree.model.Habitat;
 import com.project.tree.model.Species;
-import com.project.tree.model.conservationArea;
 import com.project.tree.service.conservationSystem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import java.util.List;
-import java.util.Map;
 
 @SpringBootApplication
 public class TreeApplication {
