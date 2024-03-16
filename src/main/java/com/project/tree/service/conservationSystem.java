@@ -69,17 +69,17 @@ public class conservationSystem {
         speciesTree.insert(species,habitatName);
     }
 
-    public conservationArea findConservationAreaForSpecies(Species species) {
-        for (conservationArea area : conservationAreaTree.getAllConservationAreas()) {
-            Map<String, List<Species>> speciesInHabitats = area.getSpeciesInHabitats();
-            for (List<Species> speciesList : speciesInHabitats.values()) {
-                if (speciesList.contains(species)) {
-                    return area;
-                }
-            }
-        }
-        return null; // Conservation area not found for the species
-    }
+//    public conservationArea findConservationAreaForSpecies(Species species) {
+//        for (conservationArea area : conservationAreaTree.getAllConservationAreas()) {
+//            Map<String, List<Species>> speciesInHabitats = area.getSpeciesInHabitats();
+//            for (List<Species> speciesList : speciesInHabitats.values()) {
+//                if (speciesList.contains(species)) {
+//                    return area;
+//                }
+//            }
+//        }
+//        return null; // Conservation area not found for the species
+//    }
 
 
     public conservationArea searchConservationArea(String name) {
@@ -111,7 +111,6 @@ public class conservationSystem {
         if (node == null) {
             return "No decision";
         }
-
         if(node.question.equals("Is the species endangered?")) {
             if (species.population < 1000) {
                 return traverseDecisionTree(node.yesChild, species);
@@ -120,7 +119,7 @@ public class conservationSystem {
             }
         } else if (node.question.equals("Focus on conservation efforts for endangered species.")) {
             return "Implement conservation measures for " + species.name;
-        } else if (node.question.equals("Monitor the species population")) {
+        } else if (node.question.equals("Monitor the species population.")) {
             return "Continue monitoring "+ species.name + " population";
         }
         return "No decision";
