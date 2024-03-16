@@ -112,21 +112,32 @@ public class conservationSystem {
             return "No decision";
         }
 
-        if (node.question.equals("Is the species endangered?")) {
+        if(node.question.equals("Is the species endangered?")) {
             if (species.population < 1000) {
                 return traverseDecisionTree(node.yesChild, species);
             } else {
                 return traverseDecisionTree(node.noChild, species);
             }
         } else if (node.question.equals("Focus on conservation efforts for endangered species.")) {
-            if (species.population < 1000) {
-                return "Monitor the species population.";
-            } else {
-                return "Implement conservation measures for " + species.name;
-            }
+            return "Implement conservation measures for " + species.name;
+        } else if (node.question.equals("Monitor the species population")) {
+            return "Continue monitoring "+ species.name + " population";
         }
-
         return "No decision";
+    }
+    public List<String> printConservationAreasInOrder() {
+
+        List<String> conservationAreasList = new ArrayList<>();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        PrintStream originalStream = System.out;
+        System.setOut(printStream);
+        conservationAreaTree.printInOrder();
+        System.setOut(originalStream);
+        String[] lines = outputStream.toString().split("\\r?\\n");
+        conservationAreasList.addAll(Arrays.asList(lines));
+
+        return conservationAreasList;
     }
 
 }
