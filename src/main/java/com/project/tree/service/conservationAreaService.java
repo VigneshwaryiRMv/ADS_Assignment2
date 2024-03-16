@@ -6,6 +6,7 @@ import com.project.tree.model.conservationAreaNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+
 //BST
 public class conservationAreaService {
     conservationAreaNode root;
@@ -55,20 +56,21 @@ public class conservationAreaService {
     }
 
 
-    /** traditional method
-    public conservationAreaNode  insertConservationArea(conservationAreaNode node, String areaName) {
-        if (node == null) {
-            return new conservationAreaNode(new conservationArea(areaName));
-        }
-
-        if (areaName.compareTo(node.area.areaName) < 0) {
-            node.left = insertConservationArea(node.left, areaName);
-        } else if (areaName.compareTo(node.area.areaName) > 0) {
-            node.right = insertConservationArea(node.right, areaName);
-        }
-
-        return node;
-    }
+    /**
+     * traditional method
+     * public conservationAreaNode  insertConservationArea(conservationAreaNode node, String areaName) {
+     * if (node == null) {
+     * return new conservationAreaNode(new conservationArea(areaName));
+     * }
+     * <p>
+     * if (areaName.compareTo(node.area.areaName) < 0) {
+     * node.left = insertConservationArea(node.left, areaName);
+     * } else if (areaName.compareTo(node.area.areaName) > 0) {
+     * node.right = insertConservationArea(node.right, areaName);
+     * }
+     * <p>
+     * return node;
+     * }
      **/
 
 
@@ -89,18 +91,19 @@ public class conservationAreaService {
         return null;
     }
 
-    /** traditional method
-    private conservationArea searchConservationArea(conservationAreaNode node, String name) {
-        if (node == null || node.area.name.equals(name)) {
-            return (node != null) ? node.area : null;
-        }
-
-        if (name.compareTo(node.area.name) < 0) {
-            return searchConservationArea(node.left, name);
-        } else {
-            return searchConservationArea(node.right, name);
-        }
-    }
+    /**
+     * traditional method
+     * private conservationArea searchConservationArea(conservationAreaNode node, String name) {
+     * if (node == null || node.area.name.equals(name)) {
+     * return (node != null) ? node.area : null;
+     * }
+     * <p>
+     * if (name.compareTo(node.area.name) < 0) {
+     * return searchConservationArea(node.left, name);
+     * } else {
+     * return searchConservationArea(node.right, name);
+     * }
+     * }
      **/
 
     public void printInOrder() {

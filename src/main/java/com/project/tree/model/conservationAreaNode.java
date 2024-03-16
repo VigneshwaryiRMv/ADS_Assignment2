@@ -9,8 +9,8 @@ public class conservationAreaNode {
 
     public conservationAreaNode(conservationArea area) {
         this.area = area;
-        left=null;
-        right=null;
-        height=1;
+        left = null;
+        right = null;
+        height = 1;
     }
 }

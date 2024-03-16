@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpeciesAVLTree {
-    SpeciesAVLNode root;
-
     public String habitatName;
+    SpeciesAVLNode root;
 
     public SpeciesAVLTree() {
         root = null;
@@ -92,8 +91,8 @@ public class SpeciesAVLTree {
         }
     }
 
-    public void insert(Species species,String habitatName) {
-        root = insertSpecies(root, species,habitatName );
+    public void insert(Species species, String habitatName) {
+        root = insertSpecies(root, species, habitatName);
     }
 
     private SpeciesAVLNode insertSpecies(SpeciesAVLNode node, Species species, String habitatName) {

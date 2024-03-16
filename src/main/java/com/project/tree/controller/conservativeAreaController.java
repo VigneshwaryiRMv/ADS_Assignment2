@@ -14,7 +14,8 @@ import java.util.List;
 
 @RestController
 public class conservativeAreaController {
-    @Autowired conservationSystem conservationSystemService;
+    @Autowired
+    conservationSystem conservationSystemService;
 
     @PostMapping("/area")
     public ResponseEntity<String> addConservationArea(@RequestBody ConservationAreaRequest conservationAreaRequest) {
@@ -38,7 +39,7 @@ public class conservativeAreaController {
 
     @GetMapping("/area/{name}")
     public ResponseEntity<conservationArea> getConservationArea(@PathVariable String name) {
-       return ResponseEntity.ok(conservationSystemService.searchConservationArea(name));
+        return ResponseEntity.ok(conservationSystemService.searchConservationArea(name));
     }
 
     @GetMapping("/species/{name}")

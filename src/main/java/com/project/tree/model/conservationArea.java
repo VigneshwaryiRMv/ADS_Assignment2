@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class conservationArea
-{
+public class conservationArea {
     public String name;
     List<Habitat> habitats;
     // Other attributes related to conservation area
@@ -18,6 +17,7 @@ public class conservationArea
         speciesInHabitats = new HashMap<>();
         // Initialize other attributes as needed
     }
+
     public void addHabitat(String habitatName) {
         habitats.add(new Habitat(habitatName));
     }

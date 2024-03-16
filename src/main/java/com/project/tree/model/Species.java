@@ -4,15 +4,16 @@ public class Species {
     public String name;
     public int population;
 
-    public Species(String name,int population) {
+    public Species(String name, int population) {
         this.name = name;
         this.population = population;
         // Initialize other attributes as needed
     }
+
     public Species() {
         // Default constructor
     }
-    
+
     public Species(String name) {
         this.name = name;
     }
