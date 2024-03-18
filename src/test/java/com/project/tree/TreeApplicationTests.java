@@ -46,8 +46,10 @@ public class TreeApplicationTests {
 
         Species tiger = new Species("Tiger", 500);
         conservationSystem.addSpecies(tiger, "Tropical Forest");
+        
+        String expectedDecision = "Implement conservation measures for Tiger";
+        String actualDecision = conservationSystem.makeConservationDecision(tiger);
 
-        String decision = conservationSystem.makeConservationDecision(tiger);
-        assertEquals("Monitor the species population.", decision);
+        assertEquals(expectedDecision, actualDecision);
     }
 }
