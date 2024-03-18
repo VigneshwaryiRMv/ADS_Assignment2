@@ -12,8 +12,8 @@ class SpeciesAVLTreeTest {
 
     @Test
     void testInsertAndSearch() {
-        // Create a new instance of SpeciesAVLTree
-        SpeciesAVLTree tree = new SpeciesAVLTree();
+        // Create a new instance of SpeciesTree
+        SpeciesTree tree = new SpeciesTree();
 
         // Create sample species
         Species tiger = new Species();
@@ -39,8 +39,8 @@ class SpeciesAVLTreeTest {
 
     @Test
     void testInOrderTraversal() {
-        // Create a new instance of SpeciesAVLTree
-        SpeciesAVLTree tree = new SpeciesAVLTree();
+        // Create a new instance of SpeciesTree
+        SpeciesTree tree = new SpeciesTree();
 
         // Create sample species
         Species tiger = new Species();

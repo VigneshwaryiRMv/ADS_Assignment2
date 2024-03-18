@@ -12,28 +12,16 @@ import java.util.*;
 @Service
 public class conservationSystem {
     conservationAreaService conservationAreaTree;
-    SpeciesAVLTree speciesTree;
+    SpeciesTree speciesTree;
     DecisionTreeNode decisionTreeRoot;
 
-    /**
-     * public TreeMap<String, conservationArea> conservationAreas;
-     * TreeSet<Species> speciesSet;
-     * DecisionTreeNode decisionTreeRoot;
-     **/
 
     public conservationSystem() {
         conservationAreaTree = new conservationAreaService();
-        speciesTree = new SpeciesAVLTree();
+        speciesTree = new SpeciesTree();
         decisionTreeRoot = buildDecisionTree();
     }
 
-    /**
-     * public conservationSystem() {
-     * conservationAreas = new TreeMap<>();
-     * speciesSet = new TreeSet<>(Comparator.comparing(Species::getName));
-     * decisionTreeRoot = buildDecisionTree();
-     * }
-     **/
 
     private DecisionTreeNode buildDecisionTree() {
         DecisionTreeNode root = new DecisionTreeNode("Is the species endangered?");
