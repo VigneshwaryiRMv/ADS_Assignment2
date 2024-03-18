@@ -128,25 +128,25 @@ public class conservationAreaService {
         }
     }
 
-    public List<conservationArea> getAllConservationAreas() {
-        List<conservationArea> allAreas = new ArrayList<>();
-        Stack<conservationAreaNode> newStack = new Stack<>();
-        conservationAreaNode currentNode = root;
-
-        while (currentNode != null || !newStack.isEmpty()) {
-            while (currentNode != null) {
-                newStack.push(currentNode);
-                currentNode = currentNode.left;
-            }
-
-            currentNode = newStack.pop();
-            allAreas.add(currentNode.area);
-
-            currentNode = currentNode.right;
-        }
-
-        return allAreas;
-    }
+//    public List<conservationArea> getAllConservationAreas() {
+//        List<conservationArea> allAreas = new ArrayList<>();
+//        Stack<conservationAreaNode> newStack = new Stack<>();
+//        conservationAreaNode currentNode = root;
+//
+//        while (currentNode != null || !newStack.isEmpty()) {
+//            while (currentNode != null) {
+//                newStack.push(currentNode);
+//                currentNode = currentNode.left;
+//            }
+//
+//            currentNode = newStack.pop();
+//            allAreas.add(currentNode.area);
+//
+//            currentNode = currentNode.right;
+//        }
+//
+//        return allAreas;
+//    }
 
     /**
     private void printInOrder(conservationAreaNode node) {
