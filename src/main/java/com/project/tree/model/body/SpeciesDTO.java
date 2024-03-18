@@ -2,7 +2,7 @@ package com.project.tree.model.body;
 
 import com.project.tree.model.Species;
 
-public class SpeciesRequest {
+public class SpeciesDTO {
     private Species species;
     private String habitatName;
 

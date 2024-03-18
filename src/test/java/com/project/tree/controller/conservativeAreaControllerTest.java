@@ -1,10 +1,9 @@
 package com.project.tree.controller;
 
-import com.project.tree.controller.conservativeAreaController;
-import com.project.tree.model.body.ConservationAreaRequest;
+import com.project.tree.model.body.ConservationAreaDTO;
 import com.project.tree.model.conservationArea;
 import com.project.tree.model.Species;
-import com.project.tree.model.body.SpeciesRequest;
+import com.project.tree.model.body.SpeciesDTO;
 import com.project.tree.service.conservationSystem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +34,7 @@ public class conservativeAreaControllerTest {
 
     @Test
     void testAddConservationArea() {
-        ConservationAreaRequest request = new ConservationAreaRequest();
+        ConservationAreaDTO request = new ConservationAreaDTO();
         request.setName("Forest");
         request.setHabitats(new String[]{"Forest"});
 
@@ -68,7 +67,7 @@ public class conservativeAreaControllerTest {
 
     @Test
     void testAddSpecies() {
-        SpeciesRequest request = new SpeciesRequest();
+        SpeciesDTO request = new SpeciesDTO();
         request.setSpecies(new Species("Tiger"));
         request.setHabitatName("Forest");
 
@@ -101,7 +100,7 @@ public class conservativeAreaControllerTest {
 
     @Test
     void testMakeConservationDecision() {
-        SpeciesRequest request = new SpeciesRequest();
+        SpeciesDTO request = new SpeciesDTO();
         Species species = new Species("Tiger");
         request.setSpecies(species);
 

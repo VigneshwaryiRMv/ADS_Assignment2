@@ -8,14 +8,12 @@ import java.util.Map;
 public class conservationArea {
     public String name;
     List<Habitat> habitats;
-    // Other attributes related to conservation area
     Map<String, List<Species>> speciesInHabitats;
 
     public conservationArea(String name) {
         this.name = name;
         habitats = new ArrayList<>();
         speciesInHabitats = new HashMap<>();
-        // Initialize other attributes as needed
     }
 
     public void addHabitat(String habitatName) {

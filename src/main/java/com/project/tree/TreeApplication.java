@@ -23,21 +23,8 @@ public class TreeApplication {
         conservationSystem.addSpecies(new Species("Tiger", 1500), "Tropical Forest");
         conservationSystem.addSpecies(new Species("Elephant", 1200), "Grassland");
         conservationSystem.addSpecies(new Species("Panda", 800), "Marshland");
+        conservationSystem.addSpecies(new Species("Camel", 10), "Desert");
 
-        /**
-         // Print species in each habitat
-         System.out.println("Species in Habitats:");
-         for (conservationArea area : conservationSystem.values()) {
-         System.out.println("Conservation Area: " + area.name);
-         Map<String, List<Species>> speciesInHabitats = area.getSpeciesInHabitats();
-         for (Map.Entry<String, List<Species>> entry : speciesInHabitats.entrySet()) {
-         String habitatName = entry.getKey();
-         List<Species> speciesList = entry.getValue();
-         System.out.println("- Habitat: " + habitatName);
-         for (Species species : speciesList) {
-         System.out.println("  - " + species.getName());
-         }
-         **/
         // Making conservation decisions
         System.out.println("Conservation Decisions:");
         List<Species> speciesList = conservationSystem.getSpeciesInOrder();

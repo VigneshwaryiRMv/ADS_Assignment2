@@ -1,30 +1,30 @@
 package com.project.tree.service;
 
 import com.project.tree.model.Species;
-import com.project.tree.model.SpeciesAVLNode;
+import com.project.tree.model.SpeciesNodeAVL;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SpeciesAVLTree {
     public String habitatName;
-    SpeciesAVLNode root;
+    SpeciesNodeAVL root;
 
     public SpeciesAVLTree() {
         root = null;
     }
 
-    private int height(SpeciesAVLNode node) {
+    private int height(SpeciesNodeAVL node) {
         return (node != null) ? node.height : 0;
     }
 
-    private int getBalance(SpeciesAVLNode node) {
+    private int getBalance(SpeciesNodeAVL node) {
         return (node != null) ? height(node.left) - height(node.right) : 0;
     }
 
-    private SpeciesAVLNode rotateRight(SpeciesAVLNode y) {
-        SpeciesAVLNode x = y.left;
-        SpeciesAVLNode T2 = x.right;
+    private SpeciesNodeAVL rotateRight(SpeciesNodeAVL y) {
+        SpeciesNodeAVL x = y.left;
+        SpeciesNodeAVL T2 = x.right;
 
         // Perform rotation
         x.right = y;
@@ -37,9 +37,9 @@ public class SpeciesAVLTree {
         return x;
     }
 
-    private SpeciesAVLNode rotateLeft(SpeciesAVLNode x) {
-        SpeciesAVLNode y = x.right;
-        SpeciesAVLNode T2 = y.left;
+    private SpeciesNodeAVL rotateLeft(SpeciesNodeAVL x) {
+        SpeciesNodeAVL y = x.right;
+        SpeciesNodeAVL T2 = y.left;
 
         // Perform rotation
         y.left = x;
@@ -56,7 +56,7 @@ public class SpeciesAVLTree {
         return searchSpecies(root, name);
     }
 
-    private Species searchSpecies(SpeciesAVLNode node, String name) {
+    private Species searchSpecies(SpeciesNodeAVL node, String name) {
         if (node == null || node.species.name.equals(name)) {
             return (node != null) ? node.species : null;
         }
@@ -83,7 +83,7 @@ public class SpeciesAVLTree {
         return result;
     }
 
-    private void inOrderTraversal(SpeciesAVLNode node, List<Species> result) {
+    private void inOrderTraversal(SpeciesNodeAVL node, List<Species> result) {
         if (node != null) {
             inOrderTraversal(node.left, result);
             result.add(node.species);
@@ -95,9 +95,9 @@ public class SpeciesAVLTree {
         root = insertSpecies(root, species, habitatName);
     }
 
-    private SpeciesAVLNode insertSpecies(SpeciesAVLNode node, Species species, String habitatName) {
+    private SpeciesNodeAVL insertSpecies(SpeciesNodeAVL node, Species species, String habitatName) {
         if (node == null) {
-            return new SpeciesAVLNode(species, habitatName);
+            return new SpeciesNodeAVL(species, habitatName);
         }
 
         // Compare species names for insertion

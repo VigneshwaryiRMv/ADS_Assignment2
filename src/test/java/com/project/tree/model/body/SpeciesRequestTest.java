@@ -9,7 +9,7 @@ public class SpeciesRequestTest {
 	
 	 @Test
 	    void testGetSpecies() {
-	        SpeciesRequest request = new SpeciesRequest();
+	        SpeciesDTO request = new SpeciesDTO();
 	        Species species = new Species("Tiger");
 	        request.setSpecies(species);
 	        assertEquals(species, request.getSpecies());
@@ -17,7 +17,7 @@ public class SpeciesRequestTest {
 
 	 @Test
 	 	void testGetHabitatName() {
-	        SpeciesRequest request = new SpeciesRequest();
+	        SpeciesDTO request = new SpeciesDTO();
 	        String habitatName = "Forest";
 	        request.setHabitatName(habitatName);
 	        assertEquals(habitatName, request.getHabitatName());
@@ -25,7 +25,7 @@ public class SpeciesRequestTest {
 
     @Test
     void testSetSpecies() {
-        SpeciesRequest request = new SpeciesRequest();
+        SpeciesDTO request = new SpeciesDTO();
         Species species = new Species("Tiger");
         request.setSpecies(species);
         assertEquals(species, request.getSpecies());
@@ -33,7 +33,7 @@ public class SpeciesRequestTest {
 
     @Test
     void testSetHabitatName() {
-        SpeciesRequest request = new SpeciesRequest();
+        SpeciesDTO request = new SpeciesDTO();
         String habitatName = "Forest";
         request.setHabitatName(habitatName);
         assertEquals(habitatName, request.getHabitatName());

@@ -1,12 +1,12 @@
 package com.project.tree.model;
 
-public class SpeciesAVLNode {
+public class SpeciesNodeAVL {
     public Species species;
-    public SpeciesAVLNode left;
-    public SpeciesAVLNode right;
+    public SpeciesNodeAVL left;
+    public SpeciesNodeAVL right;
     public int height;
 
-    public SpeciesAVLNode(Species species, String habitatName) {
+    public SpeciesNodeAVL(Species species, String habitatName) {
         this.species = species;
         left = null;
         right = null;

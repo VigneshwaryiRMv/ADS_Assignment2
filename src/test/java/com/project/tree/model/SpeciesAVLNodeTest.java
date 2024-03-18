@@ -9,7 +9,7 @@ public class SpeciesAVLNodeTest {
     @Test
     void testConstructor() {
         Species species = new Species("Tiger");
-        SpeciesAVLNode node = new SpeciesAVLNode(species, "Forest");
+        SpeciesNodeAVL node = new SpeciesNodeAVL(species, "Forest");
 
         assertEquals(species, node.species);
         assertNull(node.left);

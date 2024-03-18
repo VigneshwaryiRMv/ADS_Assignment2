@@ -1,6 +1,6 @@
 package com.project.tree.model.body;
 
-public class ConservationAreaRequest {
+public class ConservationAreaDTO {
     private String name;
     private String[] habitats;
 

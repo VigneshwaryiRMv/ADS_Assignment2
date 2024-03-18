@@ -8,14 +8,14 @@ public class ConservationAreaRequestTest {
 
     @Test
     void testSetName() {
-        ConservationAreaRequest request = new ConservationAreaRequest();
+        ConservationAreaDTO request = new ConservationAreaDTO();
         request.setName("TestName");
         assertEquals("TestName", request.getName());
     }
 
     @Test
     void testSetHabitats() {
-        ConservationAreaRequest request = new ConservationAreaRequest();
+        ConservationAreaDTO request = new ConservationAreaDTO();
         String[] habitats = {"Forest", "Lake", "Mountain"};
         request.setHabitats(habitats);
         assertArrayEquals(habitats, request.getHabitats());

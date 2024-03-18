@@ -7,7 +7,6 @@ public class Species {
     public Species(String name, int population) {
         this.name = name;
         this.population = population;
-        // Initialize other attributes as needed
     }
 
     public Species() {

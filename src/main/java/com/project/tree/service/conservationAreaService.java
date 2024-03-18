@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-//BST
+//BST concept is applied here
 public class conservationAreaService {
     conservationAreaNode root;
 
@@ -49,7 +49,7 @@ public class conservationAreaService {
                 }
                 currentNode = currentNode.right;
             } else {
-                System.out.println("No area recorded");
+                System.out.println("No area recorded in the data");
                 return;
             }
         }
@@ -112,16 +112,16 @@ public class conservationAreaService {
             return;
         }
 
-        Stack<conservationAreaNode> stack = new Stack<>();
+        Stack<conservationAreaNode> newStack = new Stack<>();
         conservationAreaNode currentNode = root;
 
-        while (currentNode != null || !stack.isEmpty()) {
+        while (currentNode != null || !newStack.isEmpty()) {
             while (currentNode != null) {
-                stack.push(currentNode);
+                newStack.push(currentNode);
                 currentNode = currentNode.left;
             }
 
-            currentNode = stack.pop();
+            currentNode = newStack.pop();
             System.out.println(currentNode.area.name);
 
             currentNode = currentNode.right;
@@ -130,16 +130,16 @@ public class conservationAreaService {
 
     public List<conservationArea> getAllConservationAreas() {
         List<conservationArea> allAreas = new ArrayList<>();
-        Stack<conservationAreaNode> stack = new Stack<>();
+        Stack<conservationAreaNode> newStack = new Stack<>();
         conservationAreaNode currentNode = root;
 
-        while (currentNode != null || !stack.isEmpty()) {
+        while (currentNode != null || !newStack.isEmpty()) {
             while (currentNode != null) {
-                stack.push(currentNode);
+                newStack.push(currentNode);
                 currentNode = currentNode.left;
             }
 
-            currentNode = stack.pop();
+            currentNode = newStack.pop();
             allAreas.add(currentNode.area);
 
             currentNode = currentNode.right;
