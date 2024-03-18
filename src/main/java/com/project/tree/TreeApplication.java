@@ -19,7 +19,11 @@ public class TreeApplication {
         conservationSystem.addConservationArea("National Park", "Grassland", "Savanna");
         conservationSystem.addConservationArea("Wildlife Sanctuary", "Desert", "Marshland");
 
-
+        // Adding species to habitats
+        conservationSystem.addSpecies(new Species("Tiger", 1500), "Tropical Forest");
+        conservationSystem.addSpecies(new Species("Elephant", 1200), "Grassland");
+        conservationSystem.addSpecies(new Species("Panda", 800), "Marshland");
+        conservationSystem.addSpecies(new Species("Camel", 10), "Desert");
 
         // Making conservation decisions
         System.out.println("Conservation Decisions:");
